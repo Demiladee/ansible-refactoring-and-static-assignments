@@ -82,3 +82,28 @@ screenshot:
 
 ![](images/webservers.png)
 
+updating uat.yml file with uat webservers ip addresses
+
+![](images/jenkins-ansibleuatservers11.png)
+
+edited /etc/ansible to add full path to roles dir
+
+`$ sudo vi /etc/ansible/ansible.cfg`
+
+`$ roles_path = /home/ubuntu/ansible_config_artifact_roles`
+
+![](images/jenkins-ansibleroles12.png)
+
+![](images/jenkins-ansibleroles1212.png)
+
+populating main.yml file with tasks to:
+
+install & configure apache
+
+clone tooling website from github
+
+ensure tooling website code is deployed to /var/www/html on each of the 2 uat webservers
+
+make surre httpd service is started
+
+![](images/jenkins-ansiblemainyml13.png)
