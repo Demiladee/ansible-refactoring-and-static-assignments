@@ -64,11 +64,39 @@ creating another playbook, common-del.yml, to run against dev servers
 
 ![](images/jenkins-ansiblecommondel7.png)
 
-updating site.yml file with common-del.yml playbook and running it against dev.yml
+updating site.yml file with common-del.yml playbook 
 
 ![](images/jenkins-ansiblesiteyml77.png)
 
-the code in the playbook deletes the wireshark we installed in the previous project
+editing /etc/ansible file to include inventory path containing all the servers ip address in the config file
+
+`$ sudo vi /etc/ansible/ansible.cfg`
+
+` inventory = /home/ubuntu/ansible-config-artifact/inventory`
+
+pinging the servers via ansible to be sure they are accessible
+
+`$ ansible all -m ping`
+
+![](images/jenkins-ansibleinventoryping88.png)
+
+![](images/jenkins-ansiblepinginventory9.png)
+
+running site.yml against dev.yml 
+
+`$ ansible-playbook -i inventory/dev.yml playbooks/site.yml`
+
+![](images/jenkins-ansibleplaybooktest10.png)
+
+confirming the code worked by ssh-ing into each webserver to confirm wireshark has been deleted
+
+`$ ssh@public-ip-address`
+
+`$ which wireshark`
+
+`$ wireshark --version`
+
+![](images/jenkins-ansibleplaybooktest1010.png)
 
 ## configuring uat webservers with a role webserver
 
@@ -107,3 +135,12 @@ ensure tooling website code is deployed to /var/www/html on each of the 2 uat we
 make surre httpd service is started
 
 ![](images/jenkins-ansiblemainyml13.png)
+
+creating uat-webservers.yml assignment within static-assignments dir to reference roles
+
+![](images/jenkins-ansibleuatwebserver14.png)
+
+importing uat-webservers.yml in site.yml file
+
+![](images/jenkins-ansiblesiteyml1414.png)
+
