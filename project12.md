@@ -28,4 +28,23 @@ the artifacts will be saved into /home/ubuntu/ansible-confi-artifact dir
 
 ![](images/jenkins-ansiblesaveartigener333ansiblejobaggregate.png)
 
+configuring /home/ubuntu/ansible-config-artifact to allow jenkins have access 
+
+`$ sudo apt install acl -y`
+
+this command should be used on each dir: /home, /ubuntu...
+
+`$ sudo setfacl -m u:jenkins:rwx /home/ubuntu/ansible-config-artifact/`
+
+![](images/jenkins-ansiblesetfaclonall4.png)
+
+![](images/jenkins-ansiblesetfaclonallbuild44.png)
+
+![](images/jenkins-ansiblesetfaclonallbuild444.png)
+
+![](images/jenkins-ansiblesetfaclonallbuild44444.png)
+
+`$ ls /home/ubuntu/ansible-config-artifact`
+
+![](images/jenkins-ansiblesetfaclonallbuild4444.png)
 
