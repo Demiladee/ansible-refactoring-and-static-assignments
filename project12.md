@@ -144,3 +144,48 @@ importing uat-webservers.yml in site.yml file
 
 ![](images/jenkins-ansiblesiteyml1414.png)
 
+## commit and test
+
+move into refactor branch where all the changes were made
+
+`$ git checkout -b refactor`
+
+`$ git add .`
+
+`$ git commit -m 'message'`
+
+`$ git push`
+
+`$ git status`
+
+go back to main branch to confirm and merge code 
+
+`$ git checkout main`
+
+`$ git  status`
+
+`$ git merge refactor`
+
+`$ git push`
+
+then run the ls command after the build is complete
+
+`$ ls /home/ubuntu/ansible-config-artifact`
+
+![](images/jenkins-ansiblegitadd15.png)
+
+![](images/jenkins-ansiblegitadd1515.png)
+
+![](images/jenkins-ansiblegitadd151515.png)
+
+![](images/jenkins-ansiblegitadd15151515.png)
+
+![](images/jenkins-ansiblegitadd1515151515.png)
+
+running playbook test against uat inventory
+
+`$ ansible-playbook -i /home/ubuntu/ansible-config-artifact/inventory/uat.yml /home/ubuntu/ansible-config-artifact/playbooks/site.yml`
+
+![](images/jenkins-ansibleplaybooktest16.png)
+
+![](images/jenkins-ansibleplaybooktest1616.png)
