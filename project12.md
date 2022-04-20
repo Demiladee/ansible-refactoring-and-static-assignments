@@ -69,3 +69,16 @@ updating site.yml file with common-del.yml playbook and running it against dev.y
 ![](images/jenkins-ansiblesiteyml77.png)
 
 the code in the playbook deletes the wireshark we installed in the previous project
+
+## configuring uat webservers with a role webserver
+
+launched two new ec2 instances for the uat webservers
+
+created webserver dir
+
+inside webserver dir, created readme.md file, defaults dir, main.yml inside defaults...
+
+screenshot:
+
+![](images/webservers.png)
+
