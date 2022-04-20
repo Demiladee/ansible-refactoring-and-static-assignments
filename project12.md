@@ -48,3 +48,24 @@ this command should be used on each dir: /home, /ubuntu...
 
 ![](images/jenkins-ansiblesetfaclonallbuild4444.png)
 
+## refactoring ansible code by importing other playbooks into site.yml
+
+creating new file, site.yml, inside playbooks dir
+
+creating new dir, static-assignments, inside the repo
+
+moving common.yml inside static-assignments dir
+
+importing common.yml playbook inside site.yml file
+
+![](images/jenkins-ansiblesiteyml6.png)
+
+creating another playbook, common-del.yml, to run against dev servers
+
+![](images/jenkins-ansiblecommondel7.png)
+
+updating site.yml file with common-del.yml playbook and running it against dev.yml
+
+![](images/jenkins-ansiblesiteyml77.png)
+
+the code in the playbook deletes the wireshark we installed in the previous project
