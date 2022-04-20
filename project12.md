@@ -189,3 +189,19 @@ running playbook test against uat inventory
 ![](images/jenkins-ansibleplaybooktest16.png)
 
 ![](images/jenkins-ansibleplaybooktest1616.png)
+
+opening tcp port 80 on ec2 instance for the uat webservers
+
+![](images/jenkins-ansibleinbound17.png)
+
+<http://web1-uat-public-ip/index.php>
+
+<http://web2-uat-public-ip/index.php>
+
+![](images/final18.png)
+
+![](images/final1818.png)
+
+ansible architecture looks like this now:
+
+![](images/infrastructurearchitecture.png)
